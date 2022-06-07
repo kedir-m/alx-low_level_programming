@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include "main.h"
+/**
+ * print_alphabet_x10 - prints lower char
+ *
+ *
+ */
+int _islower(int c)
+{
+	int c;
+
+	if (c >= 'a' && c <= 'z')
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}

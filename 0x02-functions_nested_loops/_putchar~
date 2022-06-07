@@ -1,9 +1,8 @@
 #include <stdio.h>
-#include "main.h"
 /**
- * main - calls funtion _putchar
+ * main - prints _putchar
  *
- * Return: 0 success always
+ * Return: 0 (success) Always
  */
 int main(void)
 {
@@ -13,7 +12,7 @@ int main(void)
 	for (i = 0; i < 8; i++)
 	{
 		d = a[i];
-		_putchar(d);
+		putchar(d);
 	}
 	putchar(10);
 	return (0);
