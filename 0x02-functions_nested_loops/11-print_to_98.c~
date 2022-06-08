@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include "main.h"
+/**
+ * add - adds to no.
+ * @a: pra ajh
+ * @b: para blaba bla erat bla
+ * Return: returns sum
+ *
+ */
+void print_to_98(int n)
+{
+	
+}
