@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "_putchar.h"
+#include "main.h"
 /**
  * main - calls funtion _putchar
  *
@@ -7,6 +7,7 @@
  */
 int main()
 {
-	_putchar();
+	times_table();
+//	_putchar();
 	return (0);
 }
