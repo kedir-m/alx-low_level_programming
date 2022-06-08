@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include "main.h"
+/**
+ * times_table - last digit
+ *
+ *
+ *
+ */
+int add(int, int)
+{
+	int a, b, sum;
+	sum = a + b;
+	return sum;
+}
