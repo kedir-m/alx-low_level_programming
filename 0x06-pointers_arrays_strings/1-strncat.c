@@ -1,15 +1,16 @@
 #include "main.h"
 
 /**
- * _strcat - writes the character c to stdout
+ * _strncat - writes the character c to stdout
  * @dest: parameter 1
  * @src: parameter 2
+ * @n: parameter 3
  * Return: type char pointer
  */
 
-char *_strcat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
-	int i, j;
+	int i, j, k;
 	char a;
 
 	for (i = 0; dest[i] != '\0'; i++)
@@ -18,9 +19,19 @@ char *_strcat(char *dest, char *src)
 	a = dest[i];
 
 	for (j = 0; src[j] != '\0'; j++)
+		;
+
+	for (k = 0; k < n; k++)
 	{
-		dest[i] = src[j];
+	if (k <= j)
+	{
+		dest[i] = src[k];
 		i++;
+	}
+	else
+	{
+		break;
+	}
 	}
 	dest[i] = a;
 
