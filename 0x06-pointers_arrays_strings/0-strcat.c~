@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+/**
+ * _strcat - writes the character c to stdout
+ * @dest: parameter 1
+ * @src: parameter 2
+ * Return: type char pointer
+ */
+
+char *_strcat(char *dest, char *src)
+{
+	
+}
