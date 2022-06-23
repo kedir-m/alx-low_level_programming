@@ -13,7 +13,10 @@ int _sqrt_recursion(int n)
 
 
 /**
- *
+ * square - more tlel
+ * @n: skie
+ * @val: somefx
+ * Return: some tksbfj
  */
 
 int square(int n, int val)
