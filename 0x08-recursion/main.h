@@ -1,3 +1,5 @@
+int is_prime_number(int n);
+int check_prime(int n, int resp);
 int square(int n, int val);
 int _pow_recursion(int x, int y);
 int _putchar(char c);
