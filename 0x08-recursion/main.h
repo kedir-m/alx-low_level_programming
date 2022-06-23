@@ -9,3 +9,6 @@ int _strlen_recursion(char *s);
 int factorial(int n);
 int factorial(int n);
 int _sqrt_recursion(int n);
+int last_index(char *s);
+int is_palindrome(char *s);
+int check(char *s, int start, int end, int pair);
