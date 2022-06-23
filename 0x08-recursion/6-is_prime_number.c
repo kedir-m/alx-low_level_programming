@@ -14,7 +14,7 @@ int is_prime_number(int n)
  * check_prime - sometxt
  * @n: sometxt
  * @resp: sometoo
- * Retrun: returns int
+ * Return: returns int
  */
 
 int check_prime(int n, int resp)
