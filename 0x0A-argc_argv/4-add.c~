@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+/**
+ * main - calculate mul
+ * @argc: param
+ * @argv: some
+ * Return: 0 or 1
+ */
+
+int main(int argc, char **argv)
+{
+	int sum = 0, i, j;
+
+	for (i = 1, j = 0; j < argc; i++, j++)
+	{
+		if (argv[j] == NULL)
+		{
+			return (1);
+		}
+		if (!(**(argv + i) >= '0' && **(argv + i) <= '9'))
+		{
+			printf("Error\n");
+			return (1);
+		}
+
+		sum += atoi(argv[i]);
+	}
+	printf("%d\n", sum);
+	return (0);
+}
