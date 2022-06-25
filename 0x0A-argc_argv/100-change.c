@@ -3,8 +3,8 @@
 
 /**
  * main - prints num
- * @argc: parameter
- * @argv: parame
+ * @argc: pa parame
+ * @argv: para
  * Return: returns 0
  */
 
@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	i = atoi(argv[1]);
-	while(i > 0 && coin <= 4)
+	while (i > 0 && coin <= 4)
 	{
 		if (i >= coins[coin])
 		{
@@ -32,6 +32,6 @@ int main(int argc, char *argv[])
 			coin++;
 		}
 	}
-	printf("%i\n",usedcoin);
+	printf("%i\n", usedcoin);
 	return (0);
 }
