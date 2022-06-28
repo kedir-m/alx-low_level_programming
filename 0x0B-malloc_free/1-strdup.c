@@ -3,7 +3,7 @@
 /**
  * _strdup - prints dup of string str
  * @str: char parameter
- * @Return: returns char
+ * Return: returns char
  */
 
 char *_strdup(char *str)
@@ -18,7 +18,7 @@ char *_strdup(char *str)
 	for (i = 0; str[i]; i++)
 		;
 
-	new_str = malloc(i* sizeof(char) + 1) ;
+	new_str = malloc(i * sizeof(char) + 1);
 
 	if (new_str == NULL)
 	{
