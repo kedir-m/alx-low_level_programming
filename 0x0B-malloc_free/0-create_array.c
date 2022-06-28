@@ -1,7 +1,10 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- *
+ * create_array - creates array
+ * @size: size par
+ * @c: char c
+ * Return: returns char
  */
 char *create_array(unsigned int size, char c)
 {
