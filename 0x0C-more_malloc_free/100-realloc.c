@@ -1,4 +1,4 @@
-l#include <stdlib.h>
+#include <stdlib.h>
 /**
  * _memcpy - copies data from src to dest
  * @dest: - the memory to be copied on
