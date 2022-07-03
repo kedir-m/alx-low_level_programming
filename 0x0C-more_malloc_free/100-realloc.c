@@ -7,9 +7,9 @@
  * Return: void
  */
 
-void _memcpy(void *dest, void *src, unsigned int n)
+void _memcpy(void *dest, void *src, size_t n)
 {
-	unsigned int i;
+	size_t i;
 	char *cdest = (char *)dest;
 	char *csrc = (char *)src;
 
