@@ -11,6 +11,7 @@
 void _memcpy(void *dest, void *src, unsigned int n)
 {
 	unsigned int i;
+
 	char *csrc = (char *)src;
 	char *cdest = (char *)dest;
 
@@ -28,35 +29,33 @@ void _memcpy(void *dest, void *src, unsigned int n)
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
+	void *newPtr;
 
-void *newPtr;
-
-if (new_size == 0)
-{
-	if (ptr != NULL)
+	if (new_size == 0 && (ptr != NULL))
+	{
 		free(ptr);
-	return (NULL);
-}
-if (!ptr)
-{
-	return (malloc(new_size));
-}
-if (new_size == old_size)
-{
-	return (ptr);
-}
-newPtr = malloc(new_size);
-if (!newPtr)
-	return (NULL);
+		return (NULL);
+	}
+	if (!ptr)
+	{
+		return (malloc(new_size));
+	}
+	if (new_size == old_size)
+	{
+		return (ptr);
+	}
+	newPtr = malloc(new_size);
+	if (!newPtr)
+		return (NULL);
 
-if (new_size < old_size)
-{
-	_memcpy(newPtr, ptr, new_size);
-}
-else if (new_size > old_size)
-{
-	_memcpy(newPtr, ptr, old_size);
-}
-free(ptr);
-return (newPtr);
+	if (new_size < old_size)
+	{
+		_memcpy(newPtr, ptr, new_size);
+	}
+	else if (new_size > old_size)
+	{
+		_memcpy(newPtr, ptr, old_size);
+	}
+	free(ptr);
+	return (newPtr);
 }
