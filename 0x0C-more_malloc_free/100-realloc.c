@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "main.h"
 /**
  * _memcpy - copies data from src to dest
