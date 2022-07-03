@@ -52,15 +52,11 @@ if (!newPtr)
 if (new_size < old_size)
 {
 	_memcpy(newPtr, ptr, new_size);
-	free(ptr);
-	return (newPtr);
 }
 else if (new_size > old_size)
 {
 	_memcpy(newPtr, ptr, old_size);
-	free(ptr);
-	return (newPtr);
 }
-
-return (0);
+free(ptr);
+return (newPtr);
 }
