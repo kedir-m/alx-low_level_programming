@@ -7,6 +7,7 @@
  * @src: memory source
  * @n: size of new memory
  */
+
 void _memcpy(void *dest, void *src, unsigned int n)
 {
 	unsigned int i;
@@ -29,28 +30,35 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 
 void *newPtr;
+
 if (new_size == 0)
 {
 	if (ptr != NULL)
 		free(ptr);
 	return (NULL);
 }
-else if (!ptr)
+if (!ptr)
 {
 	return (malloc(new_size));
 }
-else if (new_size <= old_size)
+if (new_size == old_size)
 {
 	return (ptr);
 }
-else
+newPtr = malloc(new_size);
+if (!newPtr)
+	return (NULL);
+
+if (new_size < old_size)
 {
-	newPtr = malloc(new_size);
-	if (newPtr)
-	{
-		_memcpy(newPtr, ptr, old_size);
-		free(ptr);
-	}
+	_memcpy(newPtr, ptr, new_size);
+	free(ptr);
+	return (newPtr);
+}
+else if (new_size > old_size)
+{
+	_memcpy(newPtr, ptr, old_size);
+	free(ptr);
 	return (newPtr);
 }
 
