@@ -1,4 +1,4 @@
-#include <stdlib.h>
+l#include <stdlib.h>
 /**
  * _memcpy - copies data from src to dest
  * @dest: - the memory to be copied on
@@ -38,14 +38,15 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 		return (NULL);
 	}
-	if (new_size <= old_size)
-	{
-		return (ptr);
-	}
 	else if (ptr == NULL)
 	{
 		newptr = malloc(new_size);
 		return (newptr);
+	}
+
+	else if (new_size <= old_size)
+	{
+		return (ptr);
 	}
 	else
 	{
