@@ -1,0 +1,10 @@
+#ifndef DOG_DEF
+#define DOG_DEF
+#define						\
+	struct dog				\
+	{					\
+		char *name;			\
+		float age;			\
+		char owner;			\
+	};
+#endif /* ends DOG_DEF */
