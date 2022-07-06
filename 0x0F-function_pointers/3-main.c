@@ -31,12 +31,12 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	if ((*op == '/' && b == 0) || (*op == '/' && b == 0))
+	if ((*op == '/' && b == 0) || (*op == '%' && b == 0))
 	{
 		printf("Error\n");
 		exit(100);
 	}
 
 	printf("%d\n", get_op_func(op)(a, b));
-	return 0;
+	return (0);
 }
