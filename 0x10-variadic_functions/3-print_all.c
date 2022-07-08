@@ -30,7 +30,7 @@ void print_char(va_list list)
 }
 
 /**
- * print_str - prints string
+ * print_string - prints string
  * @list: arguments from print_all
  */
 void print_string(va_list list)
