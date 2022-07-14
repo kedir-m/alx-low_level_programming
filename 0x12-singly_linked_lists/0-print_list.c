@@ -2,6 +2,7 @@
 /**
  * print_list - prints linked list elements
  * @h: head of linked list
+ * Return: returns number of nodes
  */
 
 size_t print_list(const list_t *h)
