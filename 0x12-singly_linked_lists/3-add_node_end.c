@@ -33,7 +33,7 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (NULL);
 	}
 
-	if ( *head == NULL)
+	if (*head == NULL)
 	{
 		new_node->next = *head;
 		*head = new_node;
@@ -45,7 +45,7 @@ list_t *add_node_end(list_t **head, const char *str)
 			if (point->next == NULL)
 			{
 				point->next = new_node;
-				point = NULL;;
+				point = NULL;
 			}
 			else
 			{
