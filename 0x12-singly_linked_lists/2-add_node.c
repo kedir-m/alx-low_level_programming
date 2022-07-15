@@ -33,7 +33,5 @@ list_t *add_node(list_t **head, const char *str)
 	point->next = *head;
 	*head = point;
 
-	print_list(*head);
-
 	return (*head);
 }
