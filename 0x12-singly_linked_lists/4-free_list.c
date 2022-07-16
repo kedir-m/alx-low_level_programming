@@ -8,22 +8,11 @@ void free_list(list_t *head)
 {
 	list_t *point;
 
-	point = head;
-
-	while (point != NULL)
+	while (head != NULL)
 	{
-		if (point->next == NULL)
-		{
-			free(point->next);
-			free(point->str);
-			point = NULL;
-		}
-		else
-		{
-			free(point->next);
-			free(point->str);
-			point = point->next;
-		}
+		point = head;
+		head = head->next;
+		free(point->str);
+		free(point);
 	}
-	free(head);
 }
