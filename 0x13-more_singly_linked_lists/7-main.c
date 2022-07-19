@@ -26,6 +26,10 @@ int main(void)
     node = get_nodeint_at_index(head, 5);
     printf("%d\n", node->n);
     print_listint(head);
+    node = get_nodeint_at_index(head, 0);
+/*    printf("%d\n", node->n);*/
+/*    node = get_nodeint_at_index(head, -1);
+      printf("%d\n", node->n);*/
     free_listint2(&head);
     return (0);
 }

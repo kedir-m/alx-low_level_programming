@@ -36,7 +36,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	size_t nod_num;
 
 	nod_num = listint_len(head);
-	if (index > nod_num)
+	if (nod_num == 0 || index > nod_num)
 		return (NULL);
 	point = head;
 	while (point != NULL)
