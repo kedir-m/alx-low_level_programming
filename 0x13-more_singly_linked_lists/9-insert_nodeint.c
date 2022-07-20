@@ -31,7 +31,7 @@ int listint_len2(const listint_t *h)
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *point, *new_node;
+	listint_t *point, *new_node, *tmp;
 	int i = 0;
 	int length;
 	int idx2 = (int)idx;
@@ -53,10 +53,11 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	while (point != NULL)
 	{
 		i++;
+		tmp = point;
 		point = point->next;
 		if (idx2 == 0)
 		{
-			new_node->next = point;
+			new_node->next = tmp;
 			*head = new_node;
 			break;
 		}
