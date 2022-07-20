@@ -45,6 +45,12 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	if (length == 0 ||idx2 == length)
 		return (add_nodeint_end(&point, n));
 
+	if (idx2 == 0)
+	{
+		new_node->next = *head;
+		*head = new_node;
+		return (*head);
+	}
 	if (idx2 < 0 && idx2 > length)
 		return (NULL);
 

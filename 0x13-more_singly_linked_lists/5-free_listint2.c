@@ -10,6 +10,7 @@ void free_listint2(listint_t **head)
 
 	point = *head;
 	*head = NULL;
+	tmp = NULL;
 	while (point != NULL)
 	{
 		tmp = point;
