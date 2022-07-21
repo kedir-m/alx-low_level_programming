@@ -1,52 +1,51 @@
 #include "main.h"
+/**
+ * _pow_recursion - Search a string for any of a set of bytes.
+ * @x: base
+ * @y: exposant
+ * Return: Pointer to the byte in `s` that matches one of the bytes in `accept`
+ * or NULL if no such byte is found.
+ */
+
+unsigned long int _pow_recursion(int x, int y)
+{
+
+	if (y < 0)
+		return (-1);
+	else if (y == 1)
+		return (x);
+	else if (y == 0)
+		return (1);
+
+	return (x * _pow_recursion(x, y - 1));
+
+}
+
 
 /**
- * powr - computes power of number
- * @base: base number
- * @exponent: exponent number
- * Return: returns result
+ * print_binary - prints decimal to binary
+ * Description: first, finds the biggest exponent for 2, then go down
+ * to find the smaller values
+ * @n: decimal number
  */
-int powr(int base, int exponent)
-{
-	int  i, res = 1;
-
-	if (exponent == 0)
-		return (1);
-	for (i = 0; i < exponent; i++)
-	{
-		res = res * base;
-	}
-
-	return (res);
-}
 
 void print_binary(unsigned long int n)
 {
-	int i, j, m, sum = 0;
-	int k = (int)n;
+	int i;
 
-	if (n == 1)
-	{
-		_putchar('1');
-		return;
-	}
+	for (i = 0; _pow_recursion(2, i) <= n; i++)
+	;
 	if (n == 0)
-	{
-		_putchar('0');
-		return;
-	}
-	for (i = 0; powr(2, i) <= k; i++)
-		;
-	m = i - 1;
-	for (j = m; j >= 0; j--)
-	{
+		i++;
 
-		if (sum + powr(2, j) > k)
+	for (i--; i >= 0; i--)
+	{
+		if (_pow_recursion(2, i) <= n)
 		{
-			_putchar('0');
-			continue;
+			_putchar('1');
+			n -= _pow_recursion(2, i);
 		}
-		sum += powr(2, j);
-		_putchar('1');
+		else
+			_putchar('0');
 	}
 }
