@@ -2,6 +2,7 @@
 #define MAIN_H
 #include <stdlib.h>
 
+#define BYTE_LENGHT 8
 typedef unsigned int siz_t;
 int _strlen(const char *str);
 int powr(int base, int exponent);
