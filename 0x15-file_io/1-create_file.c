@@ -37,7 +37,7 @@ int create_file(const char *filename, char *text_content)
 	}
 	Wfd = write(fd, text_content, _strlen(text_content));
 
-	if (Wfd == -1 || close(Wfd) < 0)
+	if (Wfd == -1 || close(fd) < 0)
 		return (-1);
 
 	return (1);
