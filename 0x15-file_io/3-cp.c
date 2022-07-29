@@ -3,6 +3,7 @@ int copy_from_file_to_file(int file_from, int file_to, char *argv1, char *argv2)
 {
 	int Wc, Rc;
 	char buf[1024];
+
 	do
 	{
 		Rc = read(file_from, buf, 1024);
@@ -38,6 +39,9 @@ int copy_from_file_to_file(int file_from, int file_to, char *argv1, char *argv2)
 int main(int argc, char **argv)
 {
 	int fd1, fd2, cc;
+	mode_t mode;
+
+	mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	if (argc != 3)
 	{
@@ -50,7 +54,7 @@ int main(int argc, char **argv)
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	fd2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 664);
+	fd2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, mode);
 
 	if (fd2 == -1)
 	{
