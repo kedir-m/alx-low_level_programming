@@ -5,6 +5,11 @@ int copy_from_file_to_file(int file_from, int file_to, char *argv1, char *argv2)
 	char buf[1024];
 
 	Rc = read(file_from, buf, 1024);
+	if (Rc == -1)
+	{
+		dprintf(2, "Error: Can't read from file %s\n", argv1);
+		return (-1);
+	}
 	while (Rc > 0)
 	{
 		if (Rc == -1)
