@@ -23,17 +23,7 @@ int copy_from_file_to_file(int file_from, int file_to, char *argv1, char *argv2)
 		}
 		}
 	}while(Rc > 0);
-	if (close(file_from) < 0)
-	{
-		dprintf(2, "Error: Can't close fd %d", file_from);
-		return (-3);
-	}
 
-	if (close(file_to) < 0)
-	{
-		dprintf(2, "Error: Can't close fd %d", file_to);
-		return (-3);
-	}
 	return (0);
 }
 int main(int argc, char **argv)
@@ -68,7 +58,18 @@ int main(int argc, char **argv)
 		exit(98);
 	if (cc == -2)
 		exit(99);
-	if (cc == -3)
+
+	if (close(fd1) < 0)
+	{
+		dprintf(2, "Error: Can't close fd %d", file_from);
 		exit(100);
+	}
+
+	if (close(fd2) < 0)
+	{
+		dprintf(2, "Error: Can't close fd %d", file_to);
+		exit(100);
+	}
+
 	return (0);
 }
