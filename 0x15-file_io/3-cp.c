@@ -3,20 +3,16 @@ int copy_from_file_to_file(int file_from, int file_to, char *argv1, char *argv2)
 {
 	int Wc, Rc;
 	char buf[1024];
-
-	Rc = read(file_from, buf, 1024);
-	if (Rc == -1)
+	do
 	{
-		dprintf(2, "Error: Can't read from file %s\n", argv1);
-		return (-1);
-	}
-	while (Rc > 0)
-	{
+		Rc = read(file_from, buf, 1024);
 		if (Rc == -1)
 		{
 			dprintf(2, "Error: Can't read from file %s\n", argv1);
 			return (-1);
 		}
+		if (Rc > 0)
+		{
 		Wc = write(file_to, buf, Rc);
 
 		if (Wc == -1)
@@ -24,8 +20,8 @@ int copy_from_file_to_file(int file_from, int file_to, char *argv1, char *argv2)
 			dprintf(2, "Error: Can't write to %s\n", argv2);
 			return (-2);
 		}
-		Rc = read(file_from, buf, 1024);
-	}
+		}
+	}while(Rc > 0);
 	if (close(file_from) < 0)
 	{
 		dprintf(2, "Error: Can't close fd %d", file_from);
