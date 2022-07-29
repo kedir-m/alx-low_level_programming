@@ -61,13 +61,13 @@ int main(int argc, char **argv)
 
 	if (close(fd1) < 0)
 	{
-		dprintf(2, "Error: Can't close fd %d", file_from);
+		dprintf(2, "Error: Can't close fd %d", fd1);
 		exit(100);
 	}
 
 	if (close(fd2) < 0)
 	{
-		dprintf(2, "Error: Can't close fd %d", file_to);
+		dprintf(2, "Error: Can't close fd %d", fd2);
 		exit(100);
 	}
 
