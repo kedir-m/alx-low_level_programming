@@ -1,4 +1,6 @@
 #include "main.h"
+#define SE STDERR_FILENO
+
 int copy_from_file_to_file(int file_from, int file_to, char *argv1, char *argv2)
 {
 	int Wc, Rc;
@@ -9,7 +11,7 @@ int copy_from_file_to_file(int file_from, int file_to, char *argv1, char *argv2)
 		Rc = read(file_from, buf, 1024);
 		if (Rc == -1)
 		{
-			dprintf(2, "Error: Can't read from file %s\n", argv1);
+			dprintf(SE, "Error: Can't read from file %s\n", argv1);
 			return (-1);
 		}
 		if (Rc > 0)
@@ -18,7 +20,7 @@ int copy_from_file_to_file(int file_from, int file_to, char *argv1, char *argv2)
 
 		if (Wc == -1)
 		{
-			dprintf(2, "Error: Can't write to %s\n", argv2);
+			dprintf(SE, "Error: Can't write to %s\n", argv2);
 			return (-2);
 		}
 		}
@@ -35,20 +37,20 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
+		dprintf(SE, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	fd1 = open(argv[1], O_RDONLY);
 	if (fd1 == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(SE, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	fd2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, mode);
 
 	if (fd2 == -1)
 	{
-		dprintf(2, "Error: Can't write to %s\n", argv[2]);
+		dprintf(SE, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 
@@ -61,13 +63,13 @@ int main(int argc, char **argv)
 
 	if (close(fd1) < 0)
 	{
-		dprintf(2, "Error: Can't close fd %d", fd1);
+		dprintf(SE, "Error: Can't close fd %d", fd1);
 		exit(100);
 	}
 
 	if (close(fd2) < 0)
 	{
-		dprintf(2, "Error: Can't close fd %d", fd2);
+		dprintf(SE, "Error: Can't close fd %d", fd2);
 		exit(100);
 	}
 
