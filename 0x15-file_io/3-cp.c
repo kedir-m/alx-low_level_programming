@@ -1,20 +1,19 @@
 #include "main.h"
 #define SE STDERR_FILENO
 /**
- * copy_file_to_file - copies file to another file
+ * cp_file - copies file to another file
  * @file_from: file to copy from
  * @file_to: file to copy to
  * @argv1: first argument
  * @argv2: second agrument
  * Return: returns -1, -2 on failure or 0 on success
  */
-int copy_from_file_to_file(int file_from, int file_to, char *argv1, char *argv2)
+int cp_file(int file_from, int file_to, char *argv1, char *argv2)
 {
 	int Wc, Rc;
 	char buf[1024];
 
-	do
-	{
+	do {
 		Rc = read(file_from, buf, 1024);
 		if (Rc == -1)
 		{
@@ -31,7 +30,7 @@ int copy_from_file_to_file(int file_from, int file_to, char *argv1, char *argv2)
 			return (-2);
 		}
 		}
-	}while(Rc > 0);
+	} while (Rc > 0);
 
 	return (0);
 }
@@ -47,7 +46,6 @@ int main(int argc, char **argv)
 	mode_t mode;
 
 	mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
-
 	if (argc != 3)
 	{
 		dprintf(SE, "Usage: cp file_from file_to\n");
@@ -60,31 +58,25 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 	fd2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, mode);
-
 	if (fd2 == -1)
 	{
 		dprintf(SE, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-
-	cc = copy_from_file_to_file(fd1, fd2, argv[1], argv[2]);
-
+	cc = cp_file(fd1, fd2, argv[1], argv[2]);
 	if (cc == -1)
 		exit(98);
 	if (cc == -2)
 		exit(99);
-
 	if (close(fd1) < 0)
 	{
 		dprintf(SE, "Error: Can't close fd %d", fd1);
 		exit(100);
 	}
-
 	if (close(fd2) < 0)
 	{
 		dprintf(SE, "Error: Can't close fd %d", fd2);
 		exit(100);
 	}
-
 	return (0);
 }
