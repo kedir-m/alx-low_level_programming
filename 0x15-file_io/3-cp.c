@@ -1,6 +1,13 @@
 #include "main.h"
 #define SE STDERR_FILENO
-
+/**
+ * copy_file_to_file - copies file to another file
+ * @file_from: file to copy from
+ * @file_to: file to copy to
+ * @argv1: first argument
+ * @argv2: second agrument
+ * Return: returns -1, -2 on failure or 0 on success
+ */
 int copy_from_file_to_file(int file_from, int file_to, char *argv1, char *argv2)
 {
 	int Wc, Rc;
@@ -28,6 +35,12 @@ int copy_from_file_to_file(int file_from, int file_to, char *argv1, char *argv2)
 
 	return (0);
 }
+/**
+ * main - checks funtion
+ * @argc: counts argument
+ * @argv: arguments
+ * Return: returns 0 on success
+ */
 int main(int argc, char **argv)
 {
 	int fd1, fd2, cc;
