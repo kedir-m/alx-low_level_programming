@@ -6,7 +6,7 @@
  * Return: 2d array
  */
 
-hash_table_t **alloc_grid(unsigned long int size)
+hash_table_t *alloc_grid(unsigned long int size)
 {
 	int i, j;
 	hash_table_t **tab;
@@ -26,7 +26,7 @@ hash_table_t **alloc_grid(unsigned long int size)
 		}
 	}
 
-	return (tab)
+	return (*tab)
 }
 
 return (tab);
