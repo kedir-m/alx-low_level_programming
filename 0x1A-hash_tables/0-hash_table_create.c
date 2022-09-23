@@ -29,7 +29,6 @@ hash_table_t *alloc_grid(unsigned long int size)
 	return (*tab)
 }
 
-return (tab);
 /**
  * hash_table_create -creates hash table.
  * @size: size of hash table.
