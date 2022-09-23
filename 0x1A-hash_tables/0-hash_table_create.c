@@ -9,7 +9,7 @@
 hash_table_t *alloc_grid(unsigned long int size)
 {
 	int i, j;
-	hash_table_t **tab;
+	hash_node_t **tab;
 	tab = malloc(sizeof(*tab) * size);
 
 
@@ -46,7 +46,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	hash_table->size = size;
 	hash_table->array = alloc_grid(size);
 
-	if (hash_table_t == NULL)
+	if (hash_table_t->array == NULL)
 		return NULL;
 
 	return (hash_table)
