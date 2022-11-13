@@ -1,93 +1,0 @@
-
-0-putchar.c,16
-int main(8,109
-
-0-putchar.c~,15
-int main(7,87
-
-1-alphabet.c,26
-void print_alphabet(8,89
-
-10-add.c,16
-int add(10,138
-
-10-add.c~,14
-int add(9,82
-
-11-print_to_98.c,24
-void print_to_98(10,98
-
-11-print_to_98.c~,25
-void print_to_98(10,138
-
-2-print_alphabet_x10.c,30
-void print_alphabet_x10(8,93
-
-3-islower.c,20
-int _islower(9,128
-
-3-islower.c~,19
-int _islower(8,93
-
-4-isalpha.c,20
-int _isalpha(9,128
-
-4-isalpha.c~,20
-int _isalpha(9,128
-
-5-sign.c,22
-int print_sign(9,136
-
-5-sign.c~,22
-int print_sign(9,136
-
-6-abs.c,16
-int _abs(9,134
-
-6-abs.c~,16
-int _abs(9,134
-
-7-print_last_digit.c,28
-int print_last_digit(9,137
-
-8-24_hours.c,22
-void jack_bauer(9,81
-
-8-24_hours.c~,23
-void jack_bauer(9,137
-
-9-times_table.c,23
-void times_table(9,82
-
-9-times_table.c~,23
-void times_table(9,81
-
-_putchar.c,19
-int _putchar(3,41
-
-_putchar.c~,80
-int _putchar	int i,2,19
-int _putchar	int i, d;2,19
-	char a[a3,42
-		d 7,126
-
-_putchar~,15
-int main(7,86
-
-main.c,16
-int main(8,109
-
-main.c~,16
-int main(8,109
-
-main.h,0
-
-_putchar.h~,0
-
-_putchar.h,0
-
-README.md,0
-
-1-alphabet.c~,0
-
-0-putchar.o,0
