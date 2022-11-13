@@ -1,7 +1,0 @@
-#include "main.h"
-
-/**
- * _puts - sometext
- * @str: sometext
- * Return: some too
- */
