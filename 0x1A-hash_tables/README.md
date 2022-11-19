@@ -1,1 +1,3 @@
-## 0x1A. C - Hash tables
+# Synopsis
+
+Experimenting and creating hash tables
